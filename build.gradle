@@ -1,6 +1,6 @@
 apply plugin: 'com.android.library'
 
-def supportLibraryVersion = '27.0.2'
+def supportLibraryVersion = '27.1.1'
 
 android {
   compileSdkVersion 27
