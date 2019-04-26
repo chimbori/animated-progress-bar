@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <declare-styleable name="AnimatedProgressBar">
-    <attr name="wrapShiftDrawable" format="boolean" />
-    <attr name="shiftDuration" format="reference" />
-    <attr name="shiftInterpolator" format="reference" />
+    <attr name="wrapShiftDrawable" format="boolean"/>
+    <attr name="shiftDuration" format="reference"/>
+    <attr name="shiftInterpolator" format="reference"/>
   </declare-styleable>
 </resources>
