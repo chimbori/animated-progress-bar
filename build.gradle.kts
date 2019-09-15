@@ -1,7 +1,9 @@
-apply plugin: "com.android.library"
+plugins {
+  id("com.android.library")
+}
 
 android {
-  compileSdkVersion = 29
+  compileSdkVersion(29)
   defaultConfig {
     minSdkVersion(21)
     targetSdkVersion(29)
