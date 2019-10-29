@@ -12,5 +12,5 @@ android {
 
 dependencies {
   implementation("androidx.annotation:annotation:1.1.0")
-  implementation("androidx.appcompat:appcompat:1.1.0")
+  implementation("androidx.appcompat:appcompat:1.0.2")
 }
