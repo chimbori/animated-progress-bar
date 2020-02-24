@@ -39,15 +39,12 @@ class AnimatedProgressBar : ProgressBar {
     init(context, attrs)
   }
 
-  constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
+  constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int, defStyleRes: Int) : super(context, attrs, defStyleAttr, defStyleRes) {
     init(context, attrs)
   }
 
   override fun setProgress(nextProgress: Int) {
-    var nextProgress = nextProgress
-    nextProgress = Math.min(nextProgress, max)
-    nextProgress = Math.max(0, nextProgress)
-    mExpectedProgress = nextProgress
+    mExpectedProgress = nextProgress.coerceIn(0, max)
     // a dirty-hack for reloading page.
     if (mExpectedProgress < progress && progress == max) {
       setProgressImmediately(0)
@@ -118,8 +115,8 @@ class AnimatedProgressBar : ProgressBar {
     val resID = a.getResourceId(R.styleable.AnimatedProgressBar_shiftInterpolator, 0)
     val wrap = a.getBoolean(R.styleable.AnimatedProgressBar_wrapShiftDrawable, false)
     mPrimaryAnimator = ValueAnimator.ofInt(progress, max)
-    mPrimaryAnimator?.setInterpolator(LinearInterpolator())
-    mPrimaryAnimator?.setDuration(PROGRESS_DURATION.toLong())
+    mPrimaryAnimator?.interpolator = LinearInterpolator()
+    mPrimaryAnimator?.duration = PROGRESS_DURATION.toLong()
     mPrimaryAnimator?.addUpdateListener(mListener)
     mClosingAnimator!!.duration = CLOSING_DURATION.toLong()
     mClosingAnimator.interpolator = LinearInterpolator()
