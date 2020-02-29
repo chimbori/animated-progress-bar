@@ -16,7 +16,9 @@ android {
 
 dependencies {
   implementation("androidx.annotation:annotation:1.1.0")
-  implementation("androidx.appcompat:appcompat:1.0.2")
+  implementation("androidx.appcompat:appcompat:1.0.2") {
+    because("DO NOT UPGRADE TO 1.1.0. It causes WebView crashes on Lollipop and Marshmallow.")
+  }
   implementation("androidx.core:core-ktx:1.2.0")
   implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version")
 }
