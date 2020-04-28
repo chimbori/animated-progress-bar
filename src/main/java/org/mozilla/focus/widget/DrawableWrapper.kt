@@ -50,6 +50,7 @@ open class DrawableWrapper(val wrappedDrawable: Drawable) : Drawable() {
   }
 
   override fun getOpacity(): Int {
+    @Suppress("DEPRECATION")
     return wrappedDrawable.opacity
   }
 
@@ -99,6 +100,7 @@ open class DrawableWrapper(val wrappedDrawable: Drawable) : Drawable() {
   }
 
   override fun setColorFilter(color: Int, mode: PorterDuff.Mode) {
+    @Suppress("DEPRECATION")
     wrappedDrawable.setColorFilter(color, mode)
   }
 
