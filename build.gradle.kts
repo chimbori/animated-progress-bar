@@ -3,7 +3,6 @@ val kotlin_version: String by rootProject.extra
 plugins {
   id("com.android.library")
   id("kotlin-android")
-  id("kotlin-android-extensions")
   id("com.github.dcendents.android-maven")
 }
 
